@@ -1,0 +1,38 @@
+@-webkit-keyframes typing { from { width: 0; } }
+@keyframes typing { from { width: 0; } }
+@-webkit-keyframes cursor { 50% { border-color: transparent; } }
+@keyframes cursor { 50% { border-color: transparent; } }
+
+.slide-1__title {
+	width: 0;
+	border-right: .1em solid;
+	overflow: hidden;
+	font: 5em monospace;
+	margin-top: 50px;
+	-webkit-animation: cursor 1s step-end infinite;
+	animation: cursor 1s step-end infinite;
+}
+
+#go:target .slide-1__title {
+	width: 6.6em;
+	width: 11ch; /* Number of characters */
+	-webkit-animation: typing 8s steps(11),
+		cursor 1s step-end infinite;
+	animation: typing 8s steps(11),
+		cursor 1s step-end infinite;
+}
+
+.slide-1 a {
+	padding: 5px 10px;
+	background: blue;
+	color: #fff;
+	border-radius: 8px;
+	text-decoration: none;
+	font: .9em Arial;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.slide-1 a:hover {
+	opacity: 0.6;
+}
