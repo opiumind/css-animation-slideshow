@@ -7,112 +7,135 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>css animations</title>
-		<meta name="бенгальские котята" content="продажа бенгальских котят">
+		<title>slideshow</title>
+		<meta name="" content="">
 		<meta name="author" content="lisovskaya">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="stylesheet" href="css-reset.css" />
 		<link rel="stylesheet" href="slideshow.css" />
+		<script type="text/javascript" href="slideshow.js"></script>
 	</head>
 
 	<body>
+		<div class='back'>
+			<-
+		</div>
+		<div class='forward'>
+			->
+		</div>
 		<div class='slideshow'>
-			<section class='slide-1'>
-				<div id='go' class='slide-1'>
-					<a href='#go' class='slide-1__button-link'>Let's go</a>
-					<a href='#reset' class='slide-1__button-link'>Reset</a>
-					<p class='slide-1__title'>CSS ANIMATIONS</p>
-				</div>
+			<section id='go' class='slide-1' data="Cover">
+				<a href='#reset' class='slide-1__button-link slide-1__button-link_reset'>Reset</a><br />
+				<a href='#go' class='slide-1__button-link slide-1__button-link_go'>Let's go!</a><br />
+				<p class='slide-1__title'>css-animation</p>
 			</section>
 
-			<section class='slide-2'>
+			<section class='slide slide-2'>
+				<h2>
+					Анимацию в браузере можно реализовать с помощью:
+				</h2>
+				<ul>
+					<li>gif</li>
+					<li>js: меняем изображения, управляем стилями dom элементов</li>
+					<li>flash</li>
+					<li>svg</li>
+					<li>css</li>
+				</ul>
 			</section>
 
-			<section class='slide-3'>
+			<section class='slide slide-3'>
+				<h2>
+					Способы создания анимации с помощью CSS
+				</h2>
+				<h3>transition-timing-function:</h3>
+				<ul>
+					<li>transition-property</li>
+					<li>transition-duration</li>
+					<li>transition-delay</li>
+					<li>transition-timing-function</li>
+					<li>steps()</li>
+				</ul>
 			</section>
 
-			<section class='slide-4'>
+			<section class='slide slide-5'>
+				<h2>
+					Поддержка CSS transitions
+				</h2>
+				<img src="picts/support-of-transitions.png">
 			</section>
 
-			<section class='slide-5'>
+			<section class='slide slide-6'>
+				<h2>
+					Поддержка временных функций CSS
+				</h2>
+				<img src="picts/support-of-timing-function.png">
 			</section>
 
-			<section class='slide-6'>
+			<section class='slide slide-4'>
+				<h3>keyframes</h3>
+				<pre>
+@keyframes &lt;name&gt; {
+	0% {
+		property: value;
+	}
+	n% {
+		property: value;
+	}
+}
+				</pre>
+
+http://codepen.io/stephengreig/pen/LmohC
+
 			</section>
 
-			<section class='slide-7'>
+			<section class='slide'>
+				<h3>Animation</h3>
+				animation: moveFromBottom 300ms ease-in-out;
 			</section>
 
-			<section class='slide-8'>
+			<section class='slide'>
+				<h3>Transform</h3>
+				transform: translateY(200%);
 			</section>
 
-			<section class='slide-9'>
+
+
+
+
+			<section class='slide slide-7'>
+				<h2>
+					Сравнение различных реализаций
+				</h2>
+				нагрузка, Профилирование
 			</section>
 
-			<section class='slide-10'>
+			<section class='slide slide-8'>
+				<h2>
+					Способы ускорения для сложных анимаций
+				</h2>
 			</section>
 
-			<section class='slide-11'>
+			<section class='slide slide-8'>
+				<h2>
+					Готовенькое
+				</h2>
 			</section>
 
-			<section class='slide-12'>
+			<section class='slide slide-9'>
+				<h2>
+					Викторина
+				</h2>
+
 			</section>
 
-			<section class='slide-13'>
+			<section class='slide slide-10'>
+				<h2>
+					Bright future
+				</h2>
 			</section>
 
-			<section class='slide-14'>
-			</section>
 
-			<section class='slide-15'>
-			</section>
-
-			<section class='slide-16'>
-			</section>
-
-			<section class='slide-17'>
-			</section>
-
-			<section class='slide-18'>
-			</section>
-
-			<section class='slide-19'>
-			</section>
-
-			<section class='slide-20'>
-			</section>
-
-			<section class='slide-21'>
-			</section>
-
-			<section class='slide-22'>
-			</section>
-
-			<section class='slide-23'>
-			</section>
-
-			<section class='slide-24'>
-			</section>
-
-			<section class='slide-25'>
-			</section>
-
-			<section class='slide-26'>
-			</section>
-
-			<section class='slide-27'>
-			</section>
-
-			<section class='slide-28'>
-			</section>
-
-			<section class='slide-29'>
-			</section>
-
-			<section class='slide-30'>
-			</section>
 		</div>
 	</body>
 </html>

@@ -1,24 +1,102 @@
+body {
+}
+
+.slideshow h2 {
+	display: inline-block;
+	width: 100%;
+	font-weight: bold !important;
+	font: 1.5em Arial;
+	color: #1a0235;
+	/*text-shadow: 0 0 5px #FF9900;*/
+	margin-bottom: 50px;
+	border: 1px solid #737373;
+}
+
+.slideshow h3 {
+	display: inline-block;
+	width: 100%;
+	font-weight: bold !important;
+	font: 1.2em Arial;
+	color: #FF9900;
+	text-shadow: 0 0 5px #000;
+	margin-bottom: 40px;
+}
+
+.back, .forward {
+	position: absolute;
+	height: 100%;
+	width: 5%;
+	cursor: pointer;
+	background: #1a0235;
+}
+
+.forward {
+	right: 0;
+}
+
+.back:hover, .forward:hover {
+	background: #5a0235;
+}
+
+.slideshow {
+	position: absolute;
+	left: 5%;
+	height: 100%;
+	width: 90%;
+
+}
+
+/*.slideshow:after {
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #002f53;
+	position: absolute;
+	bottom: -8px;
+	right: 62px;
+}*/
+
+	.slide {
+		display: inline-block;
+		padding: 5% 10%;
+		font: 2.9em Arial;
+	}
+
+	.slide-1 {
+		display: none;
+		text-align: center;
+		background: #1a0235;
+		background: -webkit-radial-gradient(40% 20%, #acd9fc 10%, #0090ff 50%, #002f53 90%);
+		background: radial-gradient(ellipse at center, #acd9fc 10%, #0090ff 50%, #002f53 90%);
+	}
+
+/*Typing text*/
 @-webkit-keyframes typing { from { width: 0; } }
 @keyframes typing { from { width: 0; } }
-@-webkit-keyframes cursor { 50% { border-color: transparent; } }
-@keyframes cursor { 50% { border-color: transparent; } }
+@-webkit-keyframes cursor { 50% { border-color: transparent;} }
+@keyframes cursor { 50% { border-color: transparent;} }
 
 .slide-1__title {
+	display: inline-block;
 	width: 0;
 	border-right: .1em solid;
 	overflow: hidden;
 	font: 5em monospace;
-	margin-top: 50px;
+	margin: 10% 0 0 0;
 	-webkit-animation: cursor 1s step-end infinite;
 	animation: cursor 1s step-end infinite;
 }
 
 #go:target .slide-1__title {
+	color: #1a0235;
 	width: 6.6em;
-	width: 11ch; /* Number of characters */
-	-webkit-animation: typing 8s steps(11),
+	width: 13ch; /* Number of characters */
+	-webkit-animation: typing 2s steps(13),
 		cursor 1s step-end infinite;
-	animation: typing 8s steps(11),
+	animation: typing 2s steps(13),
 		cursor 1s step-end infinite;
 }
 
@@ -26,13 +104,27 @@
 	padding: 5px 10px;
 	background: blue;
 	color: #fff;
-	border-radius: 8px;
+
 	text-decoration: none;
-	font: .9em Arial;
-	margin-top: 10px;
+	font-family: Arial;
+	/*margin-top: 10px;*/
 	display: inline-block;
 }
 
 .slide-1 a:hover {
 	opacity: 0.6;
+}
+
+.slide-1__button-link_reset {
+	font-size: .9em;
+	border-radius: 8px;
+	margin-top: 5%;
+
+}
+
+.slide-1__button-link_go {
+	font-size: 3.9em;
+	border-radius: 28px;
+	margin-top: 4%;
+
 }
