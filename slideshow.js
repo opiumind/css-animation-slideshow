@@ -17,4 +17,10 @@ $(document).ready(function() {
 			return false;
 		}
 	});
+
+	// $('.slide-keyframes__title').on('click', function() {
+	// 	$('.slide-keyframes__night-sky').css('display','block');
+	// 	$('.slide-keyframes__button').css('background','#1a0235');
+	// 	return false;
+	// });
 });

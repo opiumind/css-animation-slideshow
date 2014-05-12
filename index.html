@@ -14,7 +14,10 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="stylesheet" href="css-reset.css" />
 		<link rel="stylesheet" href="slideshow.css" />
-		<script type="text/javascript" href="slideshow.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="slideshow.js"></script>
+		<script type="text/javascript" src="animation.js"></script>
+
 	</head>
 
 	<body>
@@ -25,7 +28,7 @@
 			->
 		</div>
 		<div class='slideshow'>
-			<section id='go' class='slide-1' data="Cover">
+			<section id='go' class='slide slide-1' data="Cover">
 				<a href='#reset' class='slide-1__button-link slide-1__button-link_reset'>Reset</a><br />
 				<a href='#go' class='slide-1__button-link slide-1__button-link_go'>Let's go!</a><br />
 				<p class='slide-1__title'>css-animation</p>
@@ -35,9 +38,9 @@
 				<h2>
 					Анимацию в браузере можно реализовать с помощью:
 				</h2>
-				<ul>
+				<ul class="slide-2__list">
 					<li>gif</li>
-					<li>js: меняем изображения, управляем стилями dom элементов</li>
+					<li>js: меняем изображения, управляем стилями, атрибутами dom-элементов</li>
 					<li>flash</li>
 					<li>svg</li>
 					<li>css</li>
@@ -46,34 +49,20 @@
 
 			<section class='slide slide-3'>
 				<h2>
-					Способы создания анимации с помощью CSS
+					CSS-инструменты для создания анимаций
 				</h2>
-				<h3>transition-timing-function:</h3>
 				<ul>
-					<li>transition-property</li>
-					<li>transition-duration</li>
-					<li>transition-delay</li>
-					<li>transition-timing-function</li>
-					<li>steps()</li>
+					<li><h3>Keyframes</h3></li>
+					<li><h3>Animation</h3></li>
+					<li><h3>Transition</h3></li>
+					<li><h3>Transform</h3></li>
+					<li></li>
 				</ul>
 			</section>
 
-			<section class='slide slide-5'>
-				<h2>
-					Поддержка CSS transitions
-				</h2>
-				<img src="picts/support-of-transitions.png">
-			</section>
+			<section class='slide slide-4 slide-keyframes'>
 
-			<section class='slide slide-6'>
-				<h2>
-					Поддержка временных функций CSS
-				</h2>
-				<img src="picts/support-of-timing-function.png">
-			</section>
-
-			<section class='slide slide-4'>
-				<h3>keyframes</h3>
+				<h3>Keyframes</h3>
 				<pre>
 @keyframes &lt;name&gt; {
 	0% {
@@ -84,35 +73,145 @@
 	}
 }
 				</pre>
-
-http://codepen.io/stephengreig/pen/LmohC
+				<pre>
+@keyframes &lt;name&gt; {
+	from {
+		property: value;
+	}
+	to {
+		property: value;
+	}
+}
+				</pre>
+				<a href="http://codepen.io/stephengreig/pen/LmohC" target="_blank"></a>
 
 			</section>
 
-			<section class='slide'>
-				<h3>Animation</h3>
-				animation: moveFromBottom 300ms ease-in-out;
+			<section class='slide slide-5'>
+				<div class='slide-keyframes__night-sky' id="night-sky">
+					<div class='slide-keyframes__moon'></div>
+					<div class='slide-keyframes__star1' id="star"></div>
+					<div class='slide-keyframes__star2' id="star"></div>
+					<div class='slide-keyframes__star3' id="star"></div>
+					<div class='slide-keyframes__star4' id="star"></div>
+					<div class='slide-keyframes__star5' id="star"></div>
+					<div class='slide-keyframes__star6' id="star"></div>
+					<div class='slide-keyframes__star7' id="star"></div>
+					<div class='slide-keyframes__star8' id="star"></div>
+				</div>
+
+				<div class="balls" id="balls">
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+					<div class="balls__item"></div>
+				</div>
+
+				<div class='slide-keyframes__button'><a href="#star">Kill the stars</a></div>
+				<div class='slide-keyframes__button'><a href="#balls">Become crazy</a></div>
+				<div class='slide-keyframes__button'><a href="#night-sky">And turn off the night</a></div>
+
+				<h3 class='slide-keyframes__title'>Animation</h3>
+
+				<ul>
+					<li>animation-name</li>
+					<li>animation-duration: N s</li>
+					<li>animation-timing-function: linear|ease|ease-in|ease-out|cubic-bezier(n,n,n,n)|initial|inherit</li>
+					<li>animation-delay: N s</li>
+					<li>animation-iteration-count: number|infinite|initial|inherit</li>
+					<li>animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit</li>
+					<li>animation-fill-mode: none|forwards|backwards|both|initial|inherit;</li>
+					<li>animation-play-state: paused|running|initial|inherit</li>
+
+				</ul>
+				<pre>
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+				</pre>
+				<a href="http://paullaros.github.io/stopwatch-in-css/">Example of usage</a>
 			</section>
 
-			<section class='slide'>
-				<h3>Transform</h3>
-				transform: translateY(200%);
+			<section class='slide slide-6'>
+				<h3>Transition</h3>
+				<ul>
+					<li>transition-property</li>
+					<li>transition-duration</li>
+					<li>transition-delay</li>
+					<li>transition-timing-function</li>
+					<li>steps()</li>
+				</ul>
 			</section>
-
-
-
-
 
 			<section class='slide slide-7'>
 				<h2>
-					Сравнение различных реализаций
+					Поддержка CSS transitions
 				</h2>
-				нагрузка, Профилирование
+				<img src="picts/support-of-transitions.png">
 			</section>
 
 			<section class='slide slide-8'>
 				<h2>
-					Способы ускорения для сложных анимаций
+					Поддержка временных функций CSS
+				</h2>
+				<img src="picts/support-of-timing-function.png">
+			</section>
+
+			<section class='slide slide-9'>
+				<h3>Transform</h3>
+				<ul>
+					<li>matrix(n,n,n,n,n,n)</li>
+					<li>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</li>
+					<li>translate(x,y)</li>
+					<li>translate3d(x,y,z)</li>
+					<li>translateX(x)</li>
+					<li>translateY(y)</li>
+					<li>translateZ(z)</li>
+					<li>scale(x,y)</li>
+					<li>scale3d(x,y,z)</li>
+					<li>scaleX(x)</li>
+					<li>scaleY(y)</li>
+					<li>scaleZ(z)</li>
+					<li>rotate(angle)</li>
+					<li>rotate3d(x,y,z,angle)</li>
+					<li>rotateX(angle)</li>
+					<li>rotateY(angle)</li>
+					<li>rotateZ(angle)</li>
+					<li>skew(x-angle,y-angle)</li>
+					<li>skewX(angle)</li>
+					<li>skewY(angle)</li>
+					<li>perspective(n)</li>
+					<li>initial</li>
+					<li>inherit</li>
+				</ul>
+			</section>
+
+			<section class='slide slide-10'>
+				<h2>
+					Сравним различные реализации
+				</h2>
+				<div class="slide-10__animation">
+					<p>GIF</p>
+					<img src="picts/animation.gif">
+				</div>
+				<div class="slide-10__animation">
+					<p>JS</p>
+					<iframe src="js-anim.html"></iframe>
+				</div>
+				<div class="slide-10__animation">
+					<p>CSS</p>
+					<iframe src="css-anim.html"></iframe>
+				</div>
+			</section>
+
+			<section class='slide'>
+				<h2>
+					Bright future
 				</h2>
 			</section>
 
@@ -120,21 +219,233 @@ http://codepen.io/stephengreig/pen/LmohC
 				<h2>
 					Готовенькое
 				</h2>
+				<ul>
+					<li><a href="http://daneden.github.io/animate.css/">Animate.css</a>(56 анимаций)</li>
+					<li><a href="http://visionmedia.github.io/move.js/"></a>Move.js</li>
+					<li><a href="https://github.com/h5bp/Effeckt.css/"></a>Effeckt.css</li>
+				</ul>
 			</section>
 
-			<section class='slide slide-9'>
+
+
+			<section class='slide slide-quiz-cover'>
 				<h2>
-					Викторина
+					CSS викторина
 				</h2>
+				<img class='slide-quiz-cover__img' src="picts/gomer.jpg">
+			</section>
+
+			<section class='slide slide-quiz-item'>
+				<h4>
+					<a href="#answer">
+						Что будет желтым?
+					<a>
+				</h4>
+				<div class='slide-quiz-item__block'>
+					<p>HTML</p>
+					<pre>
+&lt;img alt="Example alt text" width="200" height="200"&gt;
+
+&lt;ul&gt;
+	&lt;li>Example list item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+	&lt;li>Example list item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+&lt;div>
+	&lt;span&gt;This is a &lt;a href="#"&gt;link&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+					</pre>
+				</div>
+				<div class='slide-quiz-item__block'>
+					<p>CSS</p>
+					<pre>
+body {
+	color: yellow;
+	background: #444;
+	font-size: 20px;
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+ul {
+	border: solid 2px;
+	text-align: left;
+}
+ol {
+	text-align: left;
+}
+hr {
+	border-color: inherit;
+}
+div {
+	border: solid 1px;
+	padding: 5px;
+}
+span {
+	text-decoration: underline;
+}
+					</pre>
+				</div>
+				<div id="answer">
+					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
+					<ul>
+						<li>Весь текст кроме ссылки</li>
+						<li>Альтернативный текст на месте отсутствующего изображения</li>
+						<li>Рамка у элементов списка</li>
+						<li>Маркер ненумерованного списка</li>
+						<li>Номер упорядоченного списка</li>
+						<li>Элемент hr</li>
+						<li>Рамка у div</li>
+						<li>Подчеркивание у span, за исключением ссылки</li>
+					</ul>
+					<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/t7MLY/" target="_blank">Check it</a>
+				</div>
+			</section>
+
+			<section class='slide'>
+				<h4>
+					<a href="#answer">
+						Что произойдет с картинкой?
+					<a>
+				</h4>
+				<div class='slide-quiz-item__block'>
+					<p>HTML</p>
+					<pre>
+&lt;div&gt;
+	&lt;img src="http://www.mastersite.org.ua/uploaded_images/css3.gif" /&gt;
+&lt;/div&gt;
+					</pre>
+				</div>
+				<div class='slide-quiz-item__block'>
+					<p>CSS</p>
+					<pre>
+img {
+	clip: rect(40px, 300px, 220px, 90px);
+}
+					</pre>
+				</div>
+				<div id="answer">
+					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
+					<p>Ничего</p>
+				</div>
+				<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/E6SJc/" target="_blank">Check it</a>
 
 			</section>
 
-			<section class='slide slide-10'>
+			<section class='slide'>
+				<h4>
+					<a href="#answer">
+						Чем отличается word-wrap и overflow-wrap?
+					<a>
+				</h4>
+
+				<div id="answer">
+					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
+					<p>Ничем</p>
+				</div>
+				<a class="slide-quiz-item__answer-ckeck" href="http://dev.w3.org/csswg/css-text-3/#overflow-wrap-property" target="_blank">Check it</a>
+
+			</section>
+
+			<section class='slide'>
+				<h4>
+					<a href="#answer">
+						Как переместить красный квадрат на задний план, не меняя позиционирование, z-index и разметку?
+					<a>
+				</h4>
+				<div class='slide-quiz-item__block'>
+					<p>HTML</p>
+					<pre>
+&lt;div&gt;
+  &lt;span class="red"&gt;Hide me&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="green"&gt;Green&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span class="blue"&gt;Blue&lt;/span&gt;
+&lt;/div&gt;
+					</pre>
+				</div>
+				<div class='slide-quiz-item__block'>
+					<p>CSS</p>
+					<pre>
+.red, .green, .blue {
+	position: absolute;
+	width: 100px;
+	color: white;
+	line-height: 100px;
+	text-align: center;
+}
+
+.red {
+	z-index: 1;
+	top: 20px;
+	left: 20px;
+	background: red;
+}
+
+.green {
+	top: 60px;
+	left: 60px;
+	background: green;
+}
+
+.blue {
+	top: 100px;
+	left: 100px;
+	background: blue;
+}
+					</pre>
+				</div>
+				<div id="answer">
+					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
+					<p>Добавить:</p>
+					<pre>
+div:first-child {
+	opacity: .99;
+}
+					</pre>
+				</div>
+				<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/6f4sJ/2/" target="_blank">Check it</a>
+
+			</section>
+
+			<section class='slide'>
+				<h4>
+					<a href="#answer">
+						Что произойдет с картинкой?
+					<a>
+				</h4>
+				<div class='slide-quiz-item__block'>
+					<pre>
+<div>
+	<img src="http://www.mastersite.org.ua/uploaded_images/css3.gif" />
+</div>
+					</pre>
+				</div>
+				<div class='slide-quiz-item__block'>
+					<pre>
+					</pre>
+				</div>
+				<div id="answer">
+					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
+					<ul>
+
+					</ul>
+				</div>
+				<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/E6SJc/">Check it</a>
+
+			</section>
+
+			<section class='slide'>
 				<h2>
 					Bright future
 				</h2>
 			</section>
-
 
 		</div>
 	</body>
