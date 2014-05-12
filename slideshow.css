@@ -399,6 +399,26 @@ iframe {
 		100% { left:75%; }
 	}
 
+	.slide-10 {
+
+	}
+
+		.slide-10__animation {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+			.slide-10__animation a:hover {
+				color: green;
+			}
+
+	.slide-14 {
+
+	}
+
+		.slide-14 a:hover {
+			color: green;
+		}
 
 
 
