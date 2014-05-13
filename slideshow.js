@@ -1,9 +1,11 @@
+var currentSlide = 1;
 $(document).ready(function() {
-	var currentSlide = 0;
 	$('.back').on('click', function() {
-		if (currentSlide > 0) {
+		if (currentSlide > 1) {
 
+			$('.slide-' + currentSlide).removeClass('active-slide');
 			currentSlide--;
+			$('.slide-' + currentSlide).addClass('active-slide');
 		} else {
 			return false;
 		}
@@ -11,8 +13,9 @@ $(document).ready(function() {
 
 	$('.forward').on('click', function() {
 		if (currentSlide < 30) {
-
+			$('.slide-' + currentSlide).removeClass('active-slide');
 			currentSlide++;
+			$('.slide-' + currentSlide).addClass('active-slide');
 		} else {
 			return false;
 		}

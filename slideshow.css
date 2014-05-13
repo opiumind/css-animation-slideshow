@@ -36,8 +36,14 @@ pre {
 	margin: 10px;
 }
 
+ul {
+	/*display: inline-block;
+	width: 50%;*/
+}
+
 li {
 	padding: 0 0 0 10px;
+	font-size: .8em;
 }
 
 iframe {
@@ -82,18 +88,22 @@ iframe {
 }*/
 
 	.slide {
-		display: inline-block;
-		position: relative;
+		display: none;
+		position: absolute;
+		/*left: 5%;*/
 		height: 100%;
-		width: 80%;
+		width: 86%;
 
 		padding: 3% 7%;
 		/*margin-left: 5%;*/
 		font: 2.9em Arial;
 	}
+	.active-slide {
+		display: inline-block;
+	}
 
 	.slide-1 {
-		display: none;
+		/*display: none;*/
 		text-align: center;
 		background: #1a0235;
 		background: -webkit-radial-gradient(40% 20%, #acd9fc 10%, #0090ff 50%, #002f53 90%);
@@ -155,7 +165,7 @@ iframe {
 
 
 	.slide-2 {
-		display: none;
+		/*display: none;*/
 	}
 
 		.slide-2__list li {
@@ -164,16 +174,27 @@ iframe {
 		}
 
 	.slide-3 {
-		display: none;
+		/*display: none;*/
 	}
 
 	.slide-4 {
-		display: none;
+		/*display: none;*/
 	}
 
 	.slide-5 {
-
+		/*display: none;*/
+		margin-top: -2%;
 	}
+
+		.example {
+			color: grey;
+			font-style: italic;
+			font-size: .6em;
+		}
+
+		.example:hover {
+			color: green;
+		}
 
 		.slide-keyframes__title {
 			cursor: pointer;
@@ -182,6 +203,7 @@ iframe {
 		.slide-keyframes__button {
 			display: inline-block;
 			color: #575757;
+			font-size: .7em;
 			border: 1px solid #575757;
 			border-radius: 20px;
 			padding: 5px;
@@ -212,7 +234,10 @@ iframe {
 		background: #F0DB83;
 		box-shadow: 0 0 10px 5px #F0DB83;
 		border-radius: 50%;
-
+		-webkit-transition-duration: 2s;
+		transition-duration: 2s;
+		-webkit-transition-timing-function: cubic-bezier(.2,1,.9,-0.5);
+		transition-timing-function: cubic-bezier(.2,1,.9,-0.5);
 	}
 
 	.slide-keyframes__moon:after {
@@ -227,6 +252,11 @@ iframe {
 		border-radius: 50%;
 	}
 
+	.slide-keyframes__moon:target .slide-keyframes__moon:after{
+		-webkit-transform: translate(40px,150px);
+		transform: translate(40px,150px);
+	}
+
 	@keyframes blink {
 		0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
 			opacity:0.99;
@@ -235,6 +265,15 @@ iframe {
 		19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% {
 			opacity:0.4;
 			text-shadow: none;
+		}
+	}
+
+	@keyframes fade-off {
+		from {
+			opacity: 1;
+		}
+		end {
+			opacity: 0;
 		}
 	}
 
@@ -453,4 +492,8 @@ iframe {
 
 .slide-quiz-item__answer-ckeck:hover{
 	color: green;
+}
+
+.answer-div {
+	display: none;
 }

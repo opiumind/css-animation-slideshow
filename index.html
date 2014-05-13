@@ -28,7 +28,7 @@
 			->
 		</div>
 		<div class='slideshow'>
-			<section id='go' class='slide slide-1' data="Cover">
+			<section id='go' class='slide slide-1 active-slide' data="Cover">
 				<a href='#reset' class='slide-1__button-link slide-1__button-link_reset'>Reset</a><br />
 				<a href='#go' class='slide-1__button-link slide-1__button-link_go'>Let's go!</a><br />
 				<p class='slide-1__title'>css-animation</p>
@@ -56,7 +56,7 @@
 					<li><h3>Animation</h3></li>
 					<li><h3>Transition</h3></li>
 					<li><h3>Transform</h3></li>
-					<li></li>
+					<!-- <li></li> -->
 				</ul>
 			</section>
 
@@ -88,8 +88,47 @@
 			</section>
 
 			<section class='slide slide-5'>
+
+
+				<h3 class='slide-keyframes__title'>Animation</h3>
+
+				<ul>
+					<li>animation-name</li>
+					<li>animation-duration: N s</li>
+					<li>animation-timing-function: linear|ease|ease-in|ease-out|cubic-bezier(n,n,n,n)|initial|inherit</li>
+					<li>animation-delay: N s</li>
+					<li>animation-iteration-count: number|infinite|initial|inherit</li>
+					<li>animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit</li>
+					<li>animation-fill-mode: none|forwards|backwards|both|initial|inherit</li>
+					<li>animation-play-state: paused|running|initial|inherit</li>
+
+				</ul>
+				<pre>
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+				</pre>
+				<a href="http://paullaros.github.io/stopwatch-in-css/" class="example" target="_blank">Example 1</a>
+				<a href="http://codepen.io/chriscoyier/pen/CFmps" class="example" target="_blank">Example 2</a>
+			</section>
+
+			<section class='slide slide-6'>
+				<h3>Transition</h3>
+				<ul>
+					<li>transition-property: none|all|property|initial|inherit</li>
+					<li>transition-duration: N s</li>
+					<li>transition-delay: N s</li>
+					<li>transition-timing-function: ease|linear|ease-in|ease-out|ease-in-out|cubic-bezier()|initial|inherit</li>
+					<li>steps()</li>
+				</ul>
+				<pre>
+transition: property duration timing-function delay|initial|inherit;
+				</pre><br />
+				<a href="http://codepen.io/stephengreig/pen/vbqBh" class="example" target="_blank">Example 1</a>
+				<!-- <a href="http://codepen.io/chriscoyier/pen/CFmps" class="example" target="_blank">Example 2</a> -->
+			</section>
+
+			<section class='slide slide-7'>
 				<div class='slide-keyframes__night-sky' id="night-sky">
-					<div class='slide-keyframes__moon'></div>
+					<div class='slide-keyframes__moon' id='moon'></div>
 					<div class='slide-keyframes__star1' id="star"></div>
 					<div class='slide-keyframes__star2' id="star"></div>
 					<div class='slide-keyframes__star3' id="star"></div>
@@ -114,60 +153,24 @@
 					<div class="balls__item"></div>
 				</div>
 
+				<div class='slide-keyframes__button'><a href="#moon">Break the moon</a></div>
 				<div class='slide-keyframes__button'><a href="#star">Kill the stars</a></div>
 				<div class='slide-keyframes__button'><a href="#balls">Become crazy</a></div>
 				<div class='slide-keyframes__button'><a href="#night-sky">And turn off the night</a></div>
 
-				<h3 class='slide-keyframes__title'>Animation</h3>
-
-				<ul>
-					<li>animation-name</li>
-					<li>animation-duration: N s</li>
-					<li>animation-timing-function: linear|ease|ease-in|ease-out|cubic-bezier(n,n,n,n)|initial|inherit</li>
-					<li>animation-delay: N s</li>
-					<li>animation-iteration-count: number|infinite|initial|inherit</li>
-					<li>animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit</li>
-					<li>animation-fill-mode: none|forwards|backwards|both|initial|inherit;</li>
-					<li>animation-play-state: paused|running|initial|inherit</li>
-
-				</ul>
-				<pre>
-animation: name duration timing-function delay iteration-count direction fill-mode play-state;
-				</pre>
-				<a href="http://paullaros.github.io/stopwatch-in-css/">Example 1</a>
-				<a href="http://codepen.io/chriscoyier/pen/CFmps">Example 2</a>
 			</section>
 
-			<section class='slide slide-6'>
-				<h3>Transition</h3>
-				<ul>
-					<li>transition-property</li>
-					<li>transition-duration</li>
-					<li>transition-delay</li>
-					<li>transition-timing-function</li>
-					<li>steps()</li>
-				</ul>
-			</section>
 
-			<section class='slide slide-7'>
-				<h2>
-					Поддержка CSS transitions
-				</h2>
-				<img src="picts/support-of-transitions.png">
-			</section>
 
 			<section class='slide slide-8'>
-				<h2>
-					Поддержка временных функций CSS
-				</h2>
-				<img src="picts/support-of-timing-function.png">
-			</section>
-
-			<section class='slide slide-9'>
 				<h3>Transform</h3>
+				<table>
+					<tr>
+						<td>
+
 				<ul>
 					<li>matrix(n,n,n,n,n,n)</li>
-					<li>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</li>
+					<li>matrix3d(n,n,n,n,n,n,<br />n,n,n,n,n,n,n,n,n,n)</li>
 					<li>translate(x,y)</li>
 					<li>translate3d(x,y,z)</li>
 					<li>translateX(x)</li>
@@ -177,6 +180,14 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 					<li>scale3d(x,y,z)</li>
 					<li>scaleX(x)</li>
 					<li>scaleY(y)</li>
+
+				</ul>
+						</td>
+
+
+
+						<td>
+							<ul>
 					<li>scaleZ(z)</li>
 					<li>rotate(angle)</li>
 					<li>rotate3d(x,y,z,angle)</li>
@@ -190,9 +201,43 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 					<li>initial</li>
 					<li>inherit</li>
 				</ul>
+						</td>
+					</tr>
+
+				</table>
+
+
+
+			</section>
+
+
+			<section class='slide slide-9'>
+				<h2>
+					Support
+				</h2>
+				<h3>
+					Animation
+				</h3>
+				<img src="picts/animation-support.png">
 			</section>
 
 			<section class='slide slide-10'>
+
+				<h3>
+					Transitions
+				</h3>
+				<img src="picts/transitions-support.png">
+			</section>
+
+			<section class='slide slide-11'>
+
+				<h3>
+					Transforms
+				</h3>
+				<img src="picts/transforms-support.png">
+			</section>
+
+			<section class='slide slide-12'>
 				<h2>
 					Сравним различные реализации
 				</h2>
@@ -210,28 +255,46 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 				</div>
 			</section>
 
-			<section class='slide slide-11'>
-				<h3>
-					Профилирование
-				</h3>
-			</section>
-
-			<section class='slide slide-12'>
-				<h3>
-					Профилирование
-				</h3>
-			</section>
-
 			<section class='slide slide-13'>
 				<h3>
-					Профилирование
+					FPS - GIF
 				</h3>
+				<img src="picts/gif-fps.png">
 			</section>
 
 			<section class='slide slide-14'>
-				<h2>
-					Готовенькое
-				</h2>
+				<h3>
+					FPS - JS
+				</h3>
+				<img src="picts/js-frames.png">
+			</section>
+
+			<section class='slide slide-15'>
+				<h3>
+					FPS - CSS
+				</h3>
+				<img src="picts/css-fps.png">
+			</section>
+
+			<section class='slide slide-16'>
+				<h3>
+					Memory - GIF
+				</h3>
+				<img src="picts/gif-memory.png">
+			</section>
+
+			<section class='slide slide-17'>
+				<h3>
+					Memory - JS
+				</h3>
+				<img src="picts/js-memory.png">
+			</section>
+
+			<section class='slide slide-18'>
+				<h3>
+					Memory - CSS
+				</h3>
+				<img src="picts/css-memory.png">
 				<ul>
 					<li><a href="http://daneden.github.io/animate.css/">Animate.css</a>(56 анимаций)</li>
 					<li><a href="http://visionmedia.github.io/move.js/"></a>Move.js</li>
@@ -241,21 +304,24 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 
 
 
-			<section class='slide slide-quiz-cover'>
+			<section class='slide slide-19 slide-quiz-cover'>
 				<h2>
 					CSS викторина
 				</h2>
 				<img class='slide-quiz-cover__img' src="picts/gomer.jpg">
 			</section>
 
-			<section class='slide slide-quiz-item'>
+			<section class='slide slide-20 slide-quiz-item'>
 				<h3>
-					<a href="#answer">
+					<a href="#answer" onclick="$('#answer-1').show();">
 						Что будет желтым?
 					<a>
 				</h3>
-				<div class='slide-quiz-item__block'>
-					<p>HTML</p>
+				<!-- <div class='slide-quiz-item__block'> -->
+					<table>
+						<tr>
+							<td>
+								<p>HTML</p>
 					<pre>
 &lt;img alt="Example alt text" width="200" height="200"&gt;
 
@@ -272,9 +338,9 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 	&lt;span&gt;This is a &lt;a href="#"&gt;link&lt;/a&gt;&lt;/span&gt;
 &lt;/div&gt;
 					</pre>
-				</div>
-				<div class='slide-quiz-item__block'>
-					<p>CSS</p>
+							</td>
+							<td>
+								<p>CSS</p>
 					<pre>
 body {
 	color: yellow;
@@ -301,8 +367,15 @@ span {
 	text-decoration: underline;
 }
 					</pre>
-				</div>
-				<div id="answer">
+							</td>
+						</tr>
+					</table>
+
+				<!-- </div>
+				<div class='slide-quiz-item__block'>
+
+				</div> -->
+				<div id="answer-1" class="answer-div">
 					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
 					<ul>
 						<li>Весь текст кроме ссылки</li>
@@ -318,9 +391,9 @@ span {
 				</div>
 			</section>
 
-			<section class='slide'>
+			<section class='slide slide-21'>
 				<h3>
-					<a href="#answer">
+					<a href="#answer" onclick="$('#answer-2').show();">
 						Что произойдет с картинкой?
 					<a>
 				</h3>
@@ -340,22 +413,22 @@ img {
 }
 					</pre>
 				</div>
-				<div id="answer">
+				<div id="answer-2" class="answer-div">
 					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
 					<p>Ничего</p>
 				</div>
-				<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/E6SJc/" target="_blank">Check it</a>
+				<br /><a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/E6SJc/" target="_blank">Check it</a>
 
 			</section>
 
-			<section class='slide'>
+			<section class='slide slide-22'>
 				<h3>
-					<a href="#answer">
+					<a href="#answer" onclick="$('#answer-3').show();">
 						Чем отличается word-wrap и overflow-wrap?
 					<a>
 				</h3>
 
-				<div id="answer">
+				<div id="answer-3" class="answer-div">
 					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
 					<p>Ничем</p>
 				</div>
@@ -363,9 +436,9 @@ img {
 
 			</section>
 
-			<section class='slide'>
+			<section class='slide slide-23'>
 				<h3>
-					<a href="#answer">
+					<a href="#answer" onclick="$('#answer-4').show();">
 						Как переместить красный квадрат на задний план, не меняя позиционирование, z-index и разметку?
 					<a>
 				</h3>
@@ -414,7 +487,7 @@ img {
 }
 					</pre>
 				</div>
-				<div id="answer">
+				<div id="answer-4" class="answer-div">
 					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
 					<p>Добавить:</p>
 					<pre>
@@ -423,41 +496,8 @@ div:first-child {
 }
 					</pre>
 				</div>
-				<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/6f4sJ/2/" target="_blank">Check it</a>
+				<br /><a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/6f4sJ/2/" target="_blank">Check it</a>
 
-			</section>
-
-			<section class='slide'>
-				<h3>
-					<a href="#answer">
-						Что произойдет с картинкой?
-					<a>
-				</h3>
-				<div class='slide-quiz-item__block'>
-					<pre>
-<div>
-	<img src="http://www.mastersite.org.ua/uploaded_images/css3.gif" />
-</div>
-					</pre>
-				</div>
-				<div class='slide-quiz-item__block'>
-					<pre>
-					</pre>
-				</div>
-				<div id="answer">
-					<p class="slide-quiz-item__answer-title">Правильный ответ:</p>
-					<ul>
-
-					</ul>
-				</div>
-				<a class="slide-quiz-item__answer-ckeck" href="http://jsfiddle.net/Horyok/E6SJc/">Check it</a>
-
-			</section>
-
-			<section class='slide'>
-				<h2>
-					Bright future
-				</h2>
 			</section>
 
 		</div>

@@ -1,6 +1,6 @@
 var interval = 52;
 var multiplier = 0.02;
-var moveInterval = 10;
+var moveInterval = 40;
 var colorChangeInterval = 1500;
 var rootElem = $('#center');
 for (var i = 0; i < 6; i++) {
