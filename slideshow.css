@@ -146,7 +146,7 @@ iframe {
 	width: 0;
 	border-right: .1em solid;
 	overflow: hidden;
-	font: 2.5em monospace;
+	font: 2em monospace;
 	margin: 10% 0 0 0;
 	-webkit-animation: cursor 1s step-end infinite;
 	animation: cursor 1s step-end infinite;
@@ -229,7 +229,7 @@ iframe {
 	margin-left: 30%;
 	color: #1a0235;
 	font-size: 1.5em;
-	margin-top: 20%;
+	margin-top: 25%;
 }
 	.slide-keyframes__moon {
 		position: absolute;
@@ -259,7 +259,7 @@ iframe {
 	}
 
 	.slide-keyframes__moon:target{
-		-webkit-transform: translate(40px,150px);
+		-webkit-transform: translate(40px,1000px);
 		transform: translate(140px,1000px);
 	}
 
